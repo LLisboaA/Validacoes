@@ -44,7 +44,7 @@ namespace Validacoes.Controllers
             //------------ Validação da cidade ----------------------------------------------------------------------------
             if (!(pessoa.Cidade.Equals("Ariquemes") || pessoa.Cidade.Equals("Jaru") || pessoa.Cidade.Equals("Vilhena")))
             {
-                ModelState.AddModelError("Cidade", "erro");
+                ModelState.AddModelError("Cidade", "São permitidas somes as cidades Ariquemes, Jaru e Vilhena");
             }
             //-------------------------------------------------------------------------------------------------------------
 
