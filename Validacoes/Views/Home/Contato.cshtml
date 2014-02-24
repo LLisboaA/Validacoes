@@ -1,0 +1,45 @@
+﻿@model Validacoes.Models.Pessoa
+@{
+    ViewBag.Title = "Contato";
+}
+
+<h2>Contato</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        @Html.LabelFor(p => p.Nome, "Nome:")
+        @Html.EditorFor(p => p.Nome)
+        @Html.ValidationMessageFor(p => p.Nome)
+        
+        <br /> <br />
+        
+        @Html.LabelFor(p => p.Sobrenome, "Sobrenome:")
+        @Html.EditorFor(p => p.Sobrenome)
+        @Html.ValidationMessageFor(p => p.Sobrenome)
+        
+        <br /> <br />
+        
+        @Html.LabelFor(p => p.Cpf, "CPF:")
+        @Html.EditorFor(p => p.Cpf)
+        @Html.ValidationMessageFor(p => p.Cpf)
+         
+        <br /> <br />
+        
+        @Html.LabelFor(p => p.Cidade, "Cidade:")
+        @Html.EditorFor(p => p.Cidade)
+        @Html.ValidationMessageFor(p => p.Cidade)
+        
+        <br /> <br />
+        
+        @Html.LabelFor(p => p.Email, "E-mail:")
+        @Html.EditorFor(p => p.Email)
+        @Html.ValidationMessageFor(p => p.Email) 
+        
+        <br /> <br /> <br />
+        
+        <input type="submit" value="Cadastrar" />
+
+    </fieldset>
+}

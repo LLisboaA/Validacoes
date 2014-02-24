@@ -1,0 +1,31 @@
+﻿@model Validacoes.Models.Pessoa
+@{
+    ViewBag.Title = "Dados";
+}
+
+<h2>Dados</h2>
+<fieldset>
+    <legend class="subtitulo">@Html.DisplayFor(p => p.Nome) @Html.DisplayFor(p => p.Sobrenome)</legend>
+    
+    @Html.LabelFor(p => p.Nome, "Nome:")
+    @Html.DisplayFor(p => p.Nome) @Html.DisplayFor(p => p.Sobrenome)
+    
+    <br /> <br />
+    
+    @Html.LabelFor(p => p.Cpf, "CPF:")
+    @Html.DisplayFor(p => p.Cpf)
+    
+    <br /> <br />
+    
+    @Html.LabelFor(p => p.Cidade, "Cidade:")
+    @Html.DisplayFor(p => p.Cidade)
+    
+    <br /> <br />
+    
+    @Html.LabelFor(p => p.Email, "Email:")
+    @Html.DisplayFor(p => p.Email)
+    
+    <br /> <br /> <br />
+        
+    @Html.ActionLink("Voltar", "Index")
+</fieldset>
