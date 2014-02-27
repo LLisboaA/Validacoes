@@ -51,12 +51,6 @@ namespace Validacoes.Controllers
             return ModelState.IsValid ? View("Dados", pessoa) : View(pessoa); // if model state is valid...
         }
 
-        public ActionResult ValidarCPF(string Cpf) // Implementar código de validação remota
-        {
-            string ERcpf = @"^\d{3}\.\d{3}\.\d{3}-\d{2}$";
-
-            return Json("");
-        }
 
         public ActionResult Dados(Pessoa pessoa)
         {

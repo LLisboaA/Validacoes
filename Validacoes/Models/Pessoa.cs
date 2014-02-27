@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using System.Web.UI.WebControls.Expressions;
+using DataAnnotationsExtensions;
+using Validacoes.Helpers;
 
 namespace Validacoes.Models
 {
@@ -20,6 +22,7 @@ namespace Validacoes.Models
         [Required(ErrorMessage = "O campo sobrenome é obrigatório")]
         public string Sobrenome { get; set; }
 
+        [CpfValidation(ErrorMessage = "CPF informado não é válido.")]
         [Required(ErrorMessage = "Campo CPF é obrigatório")]
         public string Cpf { get; set; }
 
@@ -28,8 +31,7 @@ namespace Validacoes.Models
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "Campo email é obrigatório")]
-        [RegularExpression(@"^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$", ErrorMessage = "Email em formato inválido")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Email inválido")]
+        [Email(ErrorMessage = "Email inválido")]
         public string Email { get; set; }
     }
 }
